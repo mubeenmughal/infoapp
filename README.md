@@ -2,28 +2,24 @@
 
 Info App
 
-This Project is an online Information applicstion of employees.
+This Project is an online Information application of employees.
 
 * You can add new person data
 
-* you can add now employment data of existing employees
+* you can add new employment data of existing employees
 
-* The data is shown the root page
+* The data is shown on the root page
 
 System Dependencies
 
 * Rails 7.0.1
 * ruby 2.7.0
-* sqlite
 
 Services
 
 * hotwire
 * tailwind
 * rspec
-DB
-
-* DB used: sqlite
 
 Gems used
 
@@ -33,7 +29,7 @@ Gems used
 
 How to use
 
-* Clone this repo
+* Clone this repo:  git@github.com:mubeenmughal/infoapp.git
 * Go to project Directory
 
 * Do Bundle install
