@@ -2,13 +2,15 @@
 
 Info App
 
-This Project is an online Information application of employees.
+This Project is an online Information application of persons.
 
 * You can add new person data
 
 * you can add new employment data of existing employees
 
 * The data is shown on the root page
+
+##### Prerequisites
 
 System Dependencies
 
@@ -27,9 +29,12 @@ Gems used
 * gem ‘rspec-rails’, ‘~> 4.2.1’
 * gem ‘slim-rails’
 
-How to use
+##### 1. Check out the repository
 
-* Clone this repo:  git@github.com:mubeenmughal/infoapp.git
+```bash
+git clone git@github.com:mubeenmughal/infoapp.git
+
+```
 * Go to project Directory
 
 * Do Bundle install
@@ -37,3 +42,7 @@ How to use
 * DO db:seed
 * start server with rails s
 * App is running
+
+```bash
+And now you can visit the site with the URL http://localhost:3000
+```
