@@ -1,0 +1,34 @@
+turbo-frame#modal
+  .modal
+    .modal-overlay
+    .modal-container.bg-white.mx-auto.my-10.overflow-y-auto.max-w-lg.px-4.py-6.rounded.shadow-lg.text-left.w-full.sm:w-3/4
+      .modal-header.border-b.mb-4.p-4.pb-2
+        h2text-xl.font-bold New Record
+        button.btn-close data-action="turbo-frame#close" type="button"
+      .modal-body.p-4
+        = form_with(url: personal_data_path, data: { controller: "personal-data" }) do |form|
+            .form-group.mb-4
+              = form.label :first_name, class: "block font-semibold mb-1 text-gray-700"
+              = form.text_field :first_name, required: true, maxlength: 25, class: "form-control appearance-none block px-3 py-2 rounded shadow w-full"
+            .form-group.mb-4
+              = form.label :last_name, class: "block font-semibold mb-1 text-gray-700"
+              = form.text_field :last_name, required: true, maxlength: 50, class: "form-control appearance-none block px-3 py-2 rounded shadow w-full"
+            .form-group.mb-4
+              = form.label :nickname, class: "block font-semibold mb-1 text-gray-700"
+              = form.text_field :nickname, class: "form-control appearance-none block px-3 py-2 rounded shadow w-full"
+            .form-group.mb-4
+              = form.label :email, class: "block font-semibold mb-1 text-gray-700"
+              = form.text_field :email, required: true, class: "form-control appearance-none block px-3 py-2 rounded shadow w-full", data: {validate: "email", action: "keyup->personal-data-controller#validateEmail"}
+              .invalid-feedback.text-red-500.text-sm
+            .form-group.mb-4
+              = form.label :phone_number, class: "block font-semibold mb-1 text-gray-700"
+              = form.text_field :phone, required: true, class: "form-control appearance-none block px-3 py-2 rounded shadow w-full", data: {validate: "phone", action: "keyup->personal-data-controller#validatePhoneNumber"}
+              .invalid-feedback.text-red-500.text-sm
+            .form-group.mb-4
+              = form.label :employment_id, class: "block font-semibold mb-1 text-gray-700"
+              = form.select :employment_id, @employments.map { |ep| [ep.employer, ep.id] }, {}, { class: "form-control appearance-none block px-3 py-2 rounded shadow w-full" }
+            .form-group.flex.justify-end.mt-6
+              = form.submit "Save", class: "btn btn-primary mr-2"
+              = link_to "Cancel", personal_data_path, class: "btn btn-secondary", data: {action: "turbo-frame#close"}
+
+

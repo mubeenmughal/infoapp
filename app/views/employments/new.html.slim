@@ -1,0 +1,21 @@
+turbo-frame#employment_modal
+  .modal
+    .modal-overlay
+    .modal-container.bg-white.mx-auto.my-10.overflow-y-auto.max-w-lg.px-4.py-6.rounded.shadow-lg.text-left.w-full.sm:w-3/4
+      .modal-header.border-b.mb-4.p-4.pb-2
+        h2text-xl.font-bold New Record
+      .button.btn-close data-action="turbo-frame#close" type="button"
+      .modal-body.p-4
+        = form_with(url: @employment, data: { controller: "employments" }) do |form|
+            .form-group.mb-4
+              = form.label :Employer, class: "block font-semibold mb-1 text-gray-700"
+              = form.text_field :employer, required: true, maxlength: 25, class: "form-control appearance-none block px-3 py-2 rounded shadow w-full"
+            .form-group.mb-4
+              = form.label :Start_Date, class: "block font-semibold mb-1 text-gray-700"
+              = form.date_field :date_started, required: true, maxlength: 50, class: "form-control appearance-none block px-3 py-2 rounded shadow w-full"
+            .form-group.mb-4
+              = form.label :End_Date, class: "block font-semibold mb-1 text-gray-700"
+              = form.date_field :date_ended, class: "form-control appearance-none block px-3 py-2 rounded shadow w-full"
+            .form-group.flex.justify-end.mt-6
+              = form.submit "Save", class: "btn btn-primary mr-2"
+              = link_to "Cancel", personal_data_path, class: "btn btn-secondary", data: {action: "turbo-frame#close"}
