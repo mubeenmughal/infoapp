@@ -1,5 +1,6 @@
 class Employment < ApplicationRecord
   has_many :personal_datum, dependent: :destroy
+  belongs_to :user
 
   validates :employer, presence: true
   validate :start_date_before_end_date

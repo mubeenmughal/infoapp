@@ -10,8 +10,9 @@ class PersonalDataController < ApplicationController
   end
 
   def create
-    @personal_data = PersonalData.new(personal_data_params)
-    @all_personals = PersonalData.all 
+    @personal_data = current_user.personal_datum.build(personal_data_params)
+    @all_personals = PersonalData.all
+
     @employment = Employment.new
     respond_to do |format|
       if @personal_data.save
