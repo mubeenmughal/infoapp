@@ -5,7 +5,7 @@ class EmploymentsController < ApplicationController
   end
   
   def create
-    @employment = Employment.new(employments_params)
+    @employment = current_user.employments.build(employments_params)
     respond_to do |format|
       if @employment.save
         format.html { redirect_to personal_data_path }
