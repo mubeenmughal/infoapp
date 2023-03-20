@@ -5,7 +5,6 @@ RSpec.describe PersonalData, type: :model do
 
   describe "validations" do
     it "is valid with valid attributes" do
-      byebug
       expect(subject).to be_valid
     end
 
